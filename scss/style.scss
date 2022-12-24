@@ -1,0 +1,18 @@
+// Configuration
+@import 'variables';
+@import 'mixins';
+@import 'settings';
+@import 'placeholders';
+
+// Layout & components
+@import 'root';
+@import 'reboot';
+@import 'typo';
+@import 'grid';
+@import 'plugins';
+
+@import 'animations';
+
+// Plugins
+@import 'plugins/modal';
+@import 'plugins/flatpickr';

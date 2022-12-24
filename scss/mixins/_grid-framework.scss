@@ -1,0 +1,72 @@
+@use "sass:math";
+
+@mixin make-size($size, $columns: $grid-columns) {
+    flex: 0 0 percentage(math.div($size, $columns)) !important;
+    max-width: percentage(math.div($size, $columns)) !important;
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @if not $n {
+        @error "breakpoint `#{$name}` not found in `#{$breakpoints}`";
+    }
+    @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - 0.02, null);
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+    .col-0 {
+        @include make-size(0, $columns);
+    }
+
+    @each $breakpoint in map-keys($breakpoints) {
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                @include make-size($i, $columns);
+            }
+        }
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            .#{$breakpoint}-0 {
+                display: none;
+            }
+
+            @for $i from 1 through $columns {
+                .#{$breakpoint}-#{$i} {
+                    @include make-size($i, $columns);
+                }
+            }
+        }
+    }
+}

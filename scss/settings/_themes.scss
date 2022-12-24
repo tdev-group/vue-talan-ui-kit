@@ -1,0 +1,21 @@
+$theme-dark: (
+    --color-theme: $color-black,
+    --color-bg: #484848,
+    --color-header: #646464,
+    --color-footer: #646464,
+    --color-black: $color-white,
+    --color-white: #242424,
+    --border-column-color: rgba($color-white, 0.14),
+);
+
+$theme-light: (
+    --color-theme: $color-white,
+    --color-bg: $color-white,
+    --color-header: $color-white,
+    --color-footer: $color-white,
+    --color-black: #646464,
+    --color-white: $color-white,
+);
+
+@include make-theme('dark', $theme-dark);
+@include make-theme('light', $theme-light);

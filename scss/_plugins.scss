@@ -1,0 +1,113 @@
+.v-select-light .vs__dropdown-toggle,
+.v-select-light .vs__dropdown-menu {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    min-width: 30px;
+    line-height: 2;
+    cursor: pointer;
+    font: 400 0.9rem Montserrat;
+    background-color: #fff;
+    border-bottom: 1px solid #b1b1b1;
+}
+
+.v-select-light .vs__search::placeholder {
+    color: #777;
+}
+
+.v-select-light .vs__dropdown-toggle {
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+.v-select-light .vs__clear,
+.v-select-light .vs__open-indicator {
+    font-size: 5px;
+    fill: rgba(#000, 0.36);
+}
+
+.v-select-light .vs__search {
+    line-height: 1;
+}
+
+.v-tooltip {
+    position: relative;
+    padding: 0.5rem;
+
+    background-color: var(--color-tundora);
+
+    color: var(--color-white);
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+
+    border-radius: 0.25rem;
+
+    z-index: 9999;
+}
+
+%tooltip-arrow {
+    position: absolute;
+    content: '';
+
+    display: block;
+    width: 0.375rem;
+    height: 0.375rem;
+
+    background-color: var(--color-tundora);
+
+    transform: rotate(45deg);
+}
+
+.tooltip {
+    @extend .v-tooltip;
+
+    &[x-placement^='bottom'] {
+        margin-top: 0.3125rem;
+
+        .tooltip-arrow {
+            @extend %tooltip-arrow;
+
+            top: -0.1875rem;
+            left: 0;
+            right: 0;
+
+            margin: auto;
+        }
+    }
+
+    &[x-placement^='left'] {
+        .tooltip-arrow {
+            @extend %tooltip-arrow;
+
+            top: -0.1875rem !important;
+            right: 0.475rem;
+        }
+    }
+
+    &[x-placement^='right'] {
+        .tooltip-arrow {
+            @extend %tooltip-arrow;
+
+            top: -0.1875rem !important;
+            left: 0.475rem;
+        }
+    }
+
+    &--without-arrow {
+        .tooltip-arrow {
+            display: none !important;
+        }
+
+        &[x-placement^='left'] {
+            margin-right: 0.5rem;
+        }
+
+        &[x-placement^='right'] {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &--bordered {
+        border: 1px solid var(--color-white);
+    }
+}

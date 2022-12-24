@@ -1,0 +1,78 @@
+.text-black {
+    color: var(--color-black);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.text-error {
+    color: var(--color-red);
+}
+
+.text-xxxl {
+    font-size: var(--text-xxxl);
+}
+
+h1,
+.text-xxl {
+    font-size: var(--text-xxl);
+}
+
+h2,
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+h3,
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+h4,
+.text-md {
+    font-size: var(--text-md);
+}
+
+small,
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+}
+
+.text {
+    font-size: var(--text);
+
+    &_line-through {
+        text-decoration: line-through;
+    }
+
+    &_center {
+        text-align: center;
+    }
+
+    &_italic {
+        font-style: italic;
+    }
+
+    &_break-all {
+        word-break: break-all;
+    }
+
+    &_upper {
+        text-transform: uppercase;
+    }
+
+    &_padding-y {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    &_padding-x {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}

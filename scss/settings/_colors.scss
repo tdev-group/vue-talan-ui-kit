@@ -1,0 +1,81 @@
+:root {
+    // --- Old color scheme ---
+
+    @include defineColor(--color-orange, $orange);
+
+    @include defineColor(--color-smoky-white, $smoky-white);
+    @include defineColor(--color-soft-red, $soft-red);
+    @include defineColor(--color-soft-green, $soft-green);
+    @include defineColor(--color-const-black, $const-black);
+    @include defineColor(--color-const-white, $const-white);
+
+    @include defineColor(--default-shadow-color, $default-shadow-color);
+    @include defineColor(--header-shadow-color, $header-shadow-color);
+    @include defineColor(--footer-shadow-color, $footer-shadow-color);
+
+    @include defineColor(--column-separator-color, $column-separator-color);
+
+    // --- New color scheme ---
+
+    // Colors
+    @include defineColor(--color-red, $color-red);
+    @include defineColor(--color-blue, $color-blue);
+    @include defineColor(--color-gray, $color-gray);
+    @include defineColor(--color-semi-gray, $color-semi-gray);
+    @include defineColor(--color-dusty-gray, $color-dusty-gray);
+    @include defineColor(--color-cold-gray, $color-cold-gray);
+    @include defineColor(--color-alabaster, $color-alabaster);
+    @include defineColor(--color-green, $color-green);
+    @include defineColor(--color-black, $color-black);
+    @include defineColor(--color-white, $color-white);
+    @include defineColor(--color-tundora, $color-tundora);
+    @include defineColor(--color-silver, $color-silver);
+    @include defineColor(--color-iron, $color-iron);
+
+    // Brand colors
+    @include defineColor(--color-brand-accent, $color-brand-accent);
+
+    // Text colors
+    @include defineColor(--color-text-headline, $color-text-headline);
+    @include defineColor(--color-text-primary, $color-text-primary);
+    @include defineColor(--color-text-secondary, $color-text-secondary);
+    @include defineColor(--color-text-tertiary, $color-text-tertiary);
+    @include defineColor(--color-text-muted, $color-text-muted);
+    @include defineColor(--color-text-success, $color-text-success);
+    @include defineColor(--color-text-error, $color-text-error);
+
+    // Link colors
+    @include defineColor(--color-link-primary, $color-link-primary);
+    @include defineColor(--color-link-secondary, $color-link-secondary);
+
+    // Background color
+    @include defineColor(--color-bg-main, $color-bg-main);
+    @include defineColor(--color-bg-primary, $color-bg-primary);
+    @include defineColor(--color-bg-error, $color-bg-error);
+
+    // Border colors
+    @include defineColor(--color-border, $color-border);
+
+    // Icon colors
+    @include defineColor(--color-icon-primary, $color-icon-primary);
+    @include defineColor(--color-icon-secondary, $color-icon-secondary);
+
+    // Control colors
+    @include defineColor(--color-control-inactive, $color-control-inactive);
+    @include defineColor(--color-control-primary, $color-control-primary);
+    @include defineColor(--color-control-secondary, $color-control-secondary);
+    @include defineColor(--color-control-active, $color-control-active);
+
+    // Shadow colors
+    @include defineColor(--color-shadow-default, $color-shadow-default);
+
+    // Statuses colors
+    @include defineColor(--color-status-completed, $status-completed-color);
+    @include defineColor(--color-status-completed-bg, $status-completed-bg-color);
+    @include defineColor(--color-status-checking, $status-checking-color);
+    @include defineColor(--color-status-checking-bg, $status-checking-bg-color);
+    @include defineColor(--color-status-revision, $status-revision-color);
+    @include defineColor(--color-status-revision-bg, $status-revision-bg-color);
+    @include defineColor(--color-status-in-production, $status-in-production-color);
+    @include defineColor(--color-status-in-production-bg, $status-in-production-bg-color);
+}
